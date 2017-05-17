@@ -1,5 +1,13 @@
-[
-  {
+import { Injectable } from '@angular/core';
+import movieList from '../../sample-movies';
+
+@Injectable()
+export class CinemaService {
+
+  constructor() { }
+
+  movies: Array<Object> = [
+    {
     id: 1,
     title: "The Shawshank Redemption",
     poster: "https://i.imgur.com/SuW2ZlC.jpg",
@@ -72,7 +80,6 @@
       "Gary Oldman"
     ]
   }, {
-  {
     id: 5,
     title: "Schindler's List",
     poster: "https://i.imgur.com/IWZJOmu.jpg",
@@ -90,5 +97,28 @@
       "Jonathan Sagall",
       "Embeth Davidtz"
     ]
+  }];
+
+  getMovies(): Array<Object> {
+    return this.movies;
   }
-]
+
+  getMovie(id: number) :Object{
+    return this.movies.filter(item =>{
+      return item[id] == id;
+    });
+  }
+}
+
+export class Film{
+  id: Number;
+  tittle: String;
+  poster: String;
+  synopsis: String;
+  genres: Array<String>;
+  year: Number;
+  director: String;
+  actors: Array<String>;
+  hours: Array<String>;
+  room: Number;
+}
