@@ -1,5 +1,5 @@
 <div *ngFor="let movie of movies" [ngStyle]="{ 'display': 'inline-block', 'margin': '10px', 'text-align': 'center'}">
   <p>ROOM {{movie.room}}</p>
   <img [src]="movie.poster" [ngStyle]="{ 'width': '250px', 'height': '400px' }">
-  <p><a [routerLink] = "['movie.:id', 'movie.id']">{{movie.title}}</a></p>
+  <p><a [routerLink] = "['/movie/', movie.id]">{{movie.title}}</a></p>
 </div>
